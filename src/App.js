@@ -7,8 +7,6 @@ import Rank from './Components/Home/Rank/Rank.js';
 import ImageLinkForm from './Components/Home/Image Link Form/ImageLinkForm.js';
 import FaceRecognition from './Components/Home/FaceRecognition/FaceRecognition.js';
 import ParticlesBg from 'particles-bg';
-import Clarifai from 'clarifai';
-
 
 // PRE-RENDER
  const initialState = {
@@ -71,7 +69,7 @@ class App extends Component {
 
     onButtonSubmit = () => {
       this.setState({imageURL: this.state.input});
-            fetch('http://localhost:3000/imageurl', {
+            fetch('https://smart-brain-api-backend-518v.onrender.com/imageurl', {
               method: 'post',
               headers: {'Content-Type': 'application/json'},
               body: JSON.stringify({
@@ -81,7 +79,7 @@ class App extends Component {
         .then(response => response.json())
         .then(response => {
           if (response) {
-            fetch('http://localhost:3000/image', {
+            fetch('https://smart-brain-api-backend-518v.onrender.com/image', {
                 method: 'put',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify({
