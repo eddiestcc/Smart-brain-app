@@ -25,7 +25,7 @@ class Register extends React.Component {
         if (this.state.name < 1 || this.state.email < 4 || this.state.password < 6) {
             alert('You have not filled out the form completely. Please try again.')
         } else {
-            fetch('https://smart-brain-api-backend-518v.onrender.com/register', {
+            fetch('https://smart-brain-api-backend-4jm7.onrender.com/register', {
                 method: 'post',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify({
