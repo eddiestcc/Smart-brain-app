@@ -22,9 +22,6 @@ class Register extends React.Component {
     }
 
     onSubmitRegister = () => {
-        if (this.state.name < 1 || this.state.email < 4 || this.state.password < 6) {
-            alert('You have not filled out the form completely. Please try again.')
-        } else {
             fetch('https://smart-brain-api-backend-4jm7.onrender.com/register', {
                 method: 'post',
                 headers: {'Content-Type': 'application/json'},
@@ -41,9 +38,6 @@ class Register extends React.Component {
                     this.props.onRouteChange('home');
                 }
             })
-            
-            
-        }
     }
 
     render() {
